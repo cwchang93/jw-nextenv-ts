@@ -48,37 +48,10 @@
                 <div class="sectionItem">
                     <div class="actPeriod">活動區間: 1/1~1/31</div>
                     <button type="button" class="excelDownload">Excel下載</button>
+                    <button type="button" class="addNewItem" onclick="addNewItem()">新增項目</button>
                 </div>
 
                 <table class="tableList" style="width:100%" cellspacing="1" cellpadding="1">
-                    <tr>
-                      <th>序號</th>
-                      <th>品牌名稱</th> 
-                      <th>會員編號</th>
-                      <th>艙等</th>
-                      <th>創建日期</th>
-                      <th>狀態</th>
-                      <th>修改</th>
-                      <th>刪除</th>
-                    </tr>
-                    <tr>
-                      <td>1</td>
-                      <td>欣嚴選</td>
-                      <td>Aa12345653</td>
-                      <td>經濟艙</td>
-                      <td>2020/01/02</td>
-                      <td>公開</td>
-                      <td><button>修改</button></td>
-                      <td><button>刪除</button></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>欣圖庫</td>
-                        <td>Aa12345653</td>
-                        <td>商務艙</td>
-                        <td>2020/01/04</td>
-                        <td>公開</td>
-                    </tr>
                   </table>
 
             </div>
@@ -105,6 +78,44 @@
             del: '刪除'
         }]
 
+        function addNewItem() {
+            console.log('dataOld', data)
+            data.push({
+                no: 2, 
+            brand: "欣圖庫",
+            memberId: 'Aa12345653',
+            level: '經濟艙',
+            date: '2020/01/02',
+            status:'公開',
+            edit: '修改',
+            del: '刪除'
+            })
+            console.log('dataNew', data);
+            var element=`<tr>
+                      <th>序號</th>
+                      <th>品牌名稱</th> 
+                      <th>會員編號</th>
+                      <th>艙等</th>
+                      <th>創建日期</th>
+                      <th>狀態</th>
+                      <th>修改</th>
+                      <th>刪除</th>
+                    </tr>`;
+            for (var i=0; i<data.length; i++) {
+                element += `<tr>
+                      <td>${data[i].no}</td>
+                      <td>${data[i].brand}</td>
+                      <td>${data[i].memberId}</td>
+                      <td>${data[i].level}</td>
+                      <td>${data[i].date}</td>
+                      <td>${data[i].status}</td>
+                      <td><button>${data[i].edit}</button></td>
+                      <td><button onclick={del(${i})}>${data[i].del}</button></td>
+                    </tr>`
+            }
+
+            document.querySelector('.tableList').innerHTML= element
+        }
 
         function show() {
             document.querySelector('.actOutputWrap').classList.remove('displayNone')

@@ -1,0 +1,95 @@
+* {
+  font-family: Microsoft JhengHei;
+  margin: 0;
+  padding: 0;
+}
+
+.index .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.index .header .logoPart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.index .header .logoPart > img {
+  width: 55px;
+}
+
+.index .header .logoPart .logoTitle {
+  width: 115px;
+  text-align: center;
+  line-height: 3;
+  background-color: #2B2D2B;
+  font-size: 20px;
+  color: white;
+}
+
+.index .header .headerTabWrap {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #0B756E;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.index .header .headerTabWrap .headerTab {
+  padding: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+}
+
+.index .sectionItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px 0;
+}
+
+.index .articleSearch .articleSearchInput {
+  width: 25%;
+}
+
+.index .articleSearch .title {
+  font-weight: bold;
+}
+
+.index .articleSearch .actOutputWrap.displayNone {
+  display: none;
+}
+
+.index .articleSearch .actOutputWrap .excelDownload {
+  margin-left: 70px;
+}
+
+.index .articleSearch .actOutputWrap table,
+.index .articleSearch .actOutputWrap th,
+.index .articleSearch .actOutputWrap td {
+  text-align: center;
+  border: 1px solid black;
+}
+
+.index .articleSearch .chooseActWrap .chooseActivity,
+.index .articleSearch .chooseActWrap select {
+  margin-right: 5px;
+}
+
+.index section {
+  margin: 20px 55px;
+}
+
+.index section.displayNone {
+  display: none;
+}
+/*# sourceMappingURL=index.css.map */

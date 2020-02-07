@@ -1,0 +1,100 @@
+* {
+    font-family: Microsoft JhengHei;
+    margin: 0;
+    padding: 0;
+}
+
+.index {
+    .header {
+        display: flex;
+
+        .logoPart {
+            display: flex;
+
+            >img {
+                width: 55px;
+            }
+
+            .logoTitle {
+                width: 115px;
+                text-align: center;
+                line-height: 3;
+                background-color: #2B2D2B;
+                font-size: 20px;
+                color: white;
+            }
+        }
+
+        .headerTabWrap {
+            width: 100%;
+            display: flex;
+            background-color: #0B756E;
+            justify-content: space-around;
+            align-items: center;
+            cursor: pointer;
+
+            .headerTab {
+                padding: 10px;
+                font-weight: bold;
+                font-size: 16px;
+                color: white;
+            }
+        }
+    }
+
+    .sectionItem {
+        display: flex;
+        margin: 10px 0;
+
+    }
+
+    .articleSearch {
+
+        .articleSearchInput {
+            width: 25%;
+        }
+
+        .title {
+            font-weight: bold;
+        }
+
+        .actOutputWrap {
+
+            &.displayNone {
+                display: none;
+            }
+
+            .excelDownload {
+                margin-left: 70px;
+            }
+
+            table,
+            th,
+            td {
+                text-align: center;
+                border: 1px solid black;
+            }
+        }
+
+        .chooseActWrap {
+
+            .chooseActivity,
+            select {
+                margin-right: 5px;
+            }
+        }
+
+
+    }
+
+    section {
+        margin: 20px 55px;
+
+        &.displayNone {
+            display: none;
+        }
+
+
+    }
+
+}

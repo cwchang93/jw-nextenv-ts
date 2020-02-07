@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <title>Xinmedia Back</title>
+</head>
+<body>
+    <div class="index">
+        <header class="header">
+            <div class="logoPart">
+                <img src="./img/logo.png" />
+                <div class="logoTitle">XinMedia</div>
+            </div>
+            <div class="headerTabWrap">
+                <div class="headerTab" >會員管理</div>
+                <div class="headerTab" onclick="showTravelPoint()">旅遊金管理</div>
+                <div class="headerTab" onclick="showAct()">欣生活</div>
+                <div class="headerTab">欣嚴選</div>
+                <div class="headerTab">欣圖庫</div>
+                <div class="headerTab">欣講堂</div>
+                <div class="headerTab">聯盟合作</div>
+                <div class="headerTab">公告系統</div>
+                <div class="headerTab" onclick="closeAll()">客服中心</div>
+            </div>
+        </header>
+
+        <!-- <section class="articleSearch sec1 displayNone"> -->
+        <section class="articleSearch sec1">
+            <div class="title sectionItem">活動文章查詢</div>
+            <input class="sectionItem articleSearchInput" placeholder="請輸入會員ID/會員名稱/部落格名稱" />
+            <div class="chooseActWrap sectionItem">
+                <span class="chooseActivity">選擇對應活動</span>
+                <select>
+                    <option value="Jan">一月徵文活動</option>
+                    <option value="Feb">二月徵文活動</option>
+                    <option value="March">三月徵文活動</option>
+                    <option value="April">四月徵文活動</option>
+                  </select>
+                <button type="button" class="searchBtn">搜尋</button>
+                
+            </div>
+
+            <div class="actOutputWrap displayNone">
+                
+                <div class="sectionItem">
+                    <div class="actPeriod">活動區間: 1/1~1/31</div>
+                    <button type="button" class="excelDownload">Excel下載</button>
+                </div>
+
+                <table class="tableList" style="width:100%" cellspacing="1" cellpadding="1">
+                    <tr>
+                      <th>序號</th>
+                      <th>品牌名稱</th> 
+                      <th>會員編號</th>
+                      <th>艙等</th>
+                      <th>創建日期</th>
+                      <th>狀態</th>
+                      <th>修改</th>
+                      <th>刪除</th>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>欣嚴選</td>
+                      <td>Aa12345653</td>
+                      <td>經濟艙</td>
+                      <td>2020/01/02</td>
+                      <td>公開</td>
+                      <td><button>修改</button></td>
+                      <td><button>刪除</button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>欣圖庫</td>
+                        <td>Aa12345653</td>
+                        <td>商務艙</td>
+                        <td>2020/01/04</td>
+                        <td>公開</td>
+                    </tr>
+                  </table>
+
+            </div>
+
+
+        </section>
+
+
+
+    </div>
+</body>
+
+    <script>
+        document.querySelector('.searchBtn').addEventListener("click", show);
+
+        var data = [{
+            no: 1, 
+            brand: "欣圖庫",
+            memberId: 'Aa12345653',
+            level: '經濟艙',
+            date: '2020/01/02',
+            status:'公開',
+            edit: '修改',
+            del: '刪除'
+        }]
+
+
+        function show() {
+            document.querySelector('.actOutputWrap').classList.remove('displayNone')
+
+            var element=`<tr>
+                      <th>序號</th>
+                      <th>品牌名稱</th> 
+                      <th>會員編號</th>
+                      <th>艙等</th>
+                      <th>創建日期</th>
+                      <th>狀態</th>
+                      <th>修改</th>
+                      <th>刪除</th>
+                    </tr>`;
+            for (var i=0; i<data.length; i++) {
+                element += `<tr>
+                      <td>${data[i].no}</td>
+                      <td>${data[i].brand}</td>
+                      <td>${data[i].memberId}</td>
+                      <td>${data[i].level}</td>
+                      <td>${data[i].date}</td>
+                      <td>${data[i].status}</td>
+                      <td><button>${data[i].edit}</button></td>
+                      <td><button onclick={del(${i})}>${data[i].del}</button></td>
+                    </tr>`
+            }
+
+            document.querySelector('.tableList').innerHTML= element
+
+        }
+
+        function bump() {
+            alert();
+        }
+
+        function del(idx) {
+            console.log('hi')
+            console.log(idx)
+            data.splice(idx, 1)
+        }
+
+        function closeAll() {
+
+            // console.log(document.querySelectorAll('.sec1').classList)
+            document.querySelector('.sec1').classList.add('displayNone')
+            // document.querySelector('.sec2').classList.add('displayNone')
+            
+            // .add('displayNone')
+            // document.querySelectorAll('section').classList.add('displayNone')
+            // document.getElementsByTagName('SECTION').classList.add('displayNone')
+            
+        }
+
+        function showAct() {
+            document.querySelector('.sec1').classList.remove('displayNone')
+        }
+
+        function showTravelPoint() {
+            
+            // var element = "<div class='test'>test</div>"
+
+            // document.querySelector('.tableList').innerHTML= element
+        }
+
+    </script>
+
+
+</html>

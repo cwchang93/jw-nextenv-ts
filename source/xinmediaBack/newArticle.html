@@ -8,14 +8,14 @@
     <title>Xinmedia Back</title>
 </head>
 <body>
-    <div class="index">
+    <div class="content">
         <header class="header">
             <div class="logoPart">
                 <img src="./img/logo.png" />
                 <div class="logoTitle">XinMedia</div>
             </div>
             <div class="headerTabWrap">
-                <div class="headerTab"><a href="#">會員管理</a></div>
+                <div class="headerTab"><a href="./index.html">會員管理</a></div>
                 <div class="headerTab" ><a href="./article.html">文章管理</a></div>
                 <div class="headerTab" onclick="showAct()">欣生活</div>
                 <div class="headerTab">欣嚴選</div>
@@ -28,34 +28,36 @@
         </header>
 
         <!-- <section class="articleSearch sec1 displayNone"> -->
-        <section class="loginSection">
-                <div class="loginBoard">
-                    <div class="loginTitle">
-                        XinMedia administration
-                    </div>
-                    <div class="inputWrap">
-                        <div class="inputItemWrap">
-                        
-                            <div class="inputTitle">Username: </div>
-                            <input type="text" class="inputUser" >
-                        </div>
-                        
-                        <div class="inputItemWrap">
-                              <div class="inputTitle">Password: </div>
-                            <input type="text" class="pswdUser" >
-                        </div>
-                        
-                        <div class="loginBtnWrap">
-                            <button>Login</button>
-                        </div>
-                    </div>
+      <section class="editSection">
+             <div class="title sectionTitle">修改活動文章</div>
+             <div class="contentFrame">
 
+                 <div class="editWrap">
+                        <div class="title">
+                            
+                            <span >文章標題:</span>
+                            <span class="titleContent"><input> </input> </span>
+                        </div>
+                        <div class="articleContentWrap">
+                            <div class="articleContent">文章內容:</div>
+                            <textarea cols="135" rows="20">
+                            </textarea>
+                            </div>
+                        <div class="title">
+                        <span >關鍵字:</span>
+                            <span class="titleContent "><input class="keyword"> </input> </span>
 
+                        </div>
                 </div>
+            </div>
+            
+            <div class="btnWrap">
+                <button>儲存</button>
+                <button>取消</button>
+            </div>
 
 
-
-        </section>
+    </section>
 
 
 
@@ -63,7 +65,7 @@
 </body>
 
     <script>
-
+        console.log('content')
     </script>
 
 

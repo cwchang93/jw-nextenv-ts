@@ -50,11 +50,106 @@
   color: white;
 }
 
-.sectionItem {
+.editSection .editWrap .title {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.editSection .editWrap .title .titleContent input {
+  font-size: 24px;
+  width: 845px;
+}
+
+.editSection .editWrap .title .titleContent input.keyword {
+  width: 865px;
+}
+
+.editSection .editWrap .articleContentWrap textarea {
+  font-size: 24px;
+  width: 960px;
+}
+
+.editSection .editWrap .articleContentWrap .articleContent {
+  margin-bottom: 5px;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.editSection .btnWrap {
+  width: 962px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.editSection .btnWrap button {
+  width: 65px;
+  height: 40px;
+}
+
+.index {
+  height: 100vh;
+  background: #F8F8F8;
+}
+
+.index .loginSection {
+  background: #F8F8F8;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 10px 0;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 12%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+}
+
+.index .loginSection .loginBoard {
+  width: 390px;
+  height: 290px;
+}
+
+.index .loginSection .loginBoard .loginTitle {
+  padding: 15px 16px;
+  background-color: #0B756E;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+}
+
+.index .loginSection .loginBoard .inputWrap {
+  width: 390px;
+  padding: 20px;
+  border: solid #EAEAEA 1px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: white;
+}
+
+.index .loginSection .loginBoard .inputWrap input {
+  width: calc(100% - 10px);
+  height: 32px;
+}
+
+.index .loginSection .loginBoard .inputWrap .inputItemWrap {
+  margin-bottom: 20px;
+}
+
+.index .loginSection .loginBoard .inputWrap .inputItemWrap .inputTitle {
+  margin: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.index .loginSection .loginBoard .inputWrap .loginBtnWrap {
+  text-align: center;
+  font-size: 30px;
+}
+
+.index .loginSection .loginBoard .inputWrap .loginBtnWrap button {
+  padding: 10px;
 }
 
 .newItemWrap .formWrap {
@@ -92,7 +187,9 @@
 }
 
 .articleSearch .articleSearchInput {
-  width: 25%;
+  width: 35%;
+  height: 35px;
+  font-size: 24px;
 }
 
 .articleSearch .title {
@@ -114,6 +211,10 @@
   border: 1px solid black;
 }
 
+.articleSearch .chooseActWrap {
+  font-size: 24px;
+}
+
 .articleSearch .chooseActWrap .chooseActivity,
 .articleSearch .chooseActWrap select {
   margin-right: 5px;
@@ -125,6 +226,21 @@ section {
 
 section.displayNone {
   display: none;
+}
+
+section .sectionTitle {
+  font-size: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px 0;
+}
+
+section .sectionItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px 0;
 }
 
 .displayNone {

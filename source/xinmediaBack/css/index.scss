@@ -10,7 +10,7 @@
   .logoPart {
     display: flex;
 
-    > img {
+    >img {
       width: 55px;
     }
 
@@ -41,10 +41,128 @@
   }
 }
 
-.sectionItem {
-  display: flex;
-  margin: 10px 0;
+// .content {
+.editSection {
+
+  // text-align: center;
+
+  .editWrap {
+    // display: flex;
+    // width: 70%;
+
+    .title {
+      font-size: 26px;
+      font-weight: bold;
+
+      .titleContent {
+
+        input {
+          font-size: 24px;
+          width: 845px;
+
+          &.keyword {
+            width: 865px;
+          }
+        }
+      }
+    }
+
+    .articleContentWrap {
+
+      textarea {
+        font-size: 24px;
+        width: 960px;
+      }
+
+      .articleContent {
+        margin-bottom: 5px;
+        font-size: 26px;
+        font-weight: bold;
+      }
+    }
+
+  }
+
+  .btnWrap {
+    width: 962px;
+    text-align: center;
+    margin-top: 15px;
+
+    button {
+      width: 65px;
+      height: 40px;
+    }
+  }
+
+
 }
+
+
+.index {
+  height: 100vh;
+  background: #F8F8F8;
+
+  .loginSection {
+    // text-align: center;
+    background: #F8F8F8;
+    display: flex;
+    align-items: flex-start;
+    margin-top: 12%;
+
+    justify-content: center;
+    height: 100%;
+
+    .loginBoard {
+      width: 390px;
+      height: 290px;
+
+      .loginTitle {
+        padding: 15px 16px;
+        background-color: #0B756E;
+        border-radius: 3px;
+        color: white;
+        font-weight: bold;
+      }
+
+      .inputWrap {
+        width: 390px;
+        padding: 20px;
+        border: solid #EAEAEA 1px;
+        box-sizing: border-box;
+        background-color: white;
+
+        input {
+          width: calc(100% - 10px);
+          height: 32px;
+        }
+
+        .inputItemWrap {
+          margin-bottom: 20px;
+
+          .inputTitle {
+            margin: 5px;
+            font-size: 16px;
+            font-weight: bold;
+          }
+        }
+
+        .loginBtnWrap {
+          text-align: center;
+          font-size: 30px;
+
+          button {
+            padding: 10px;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+
+
+// }
 
 .newItemWrap {
   .formWrap {
@@ -56,22 +174,27 @@
     top: 20%;
     width: 800px;
     height: 500px;
+
     form {
       position: relative;
       padding: 15px 32px;
       font-size: 32px;
+
       .formItem {
         margin-bottom: 15px;
       }
+
       div {
         // font-size: 32px;
       }
+
       input {
         font-size: 32px;
         width: 500px;
         height: 40px;
       }
     }
+
     .close {
       position: absolute;
       right: 0;
@@ -82,7 +205,9 @@
 
 .articleSearch {
   .articleSearchInput {
-    width: 25%;
+    width: 35%;
+    height: 35px;
+    font-size: 24px;
   }
 
   .title {
@@ -107,6 +232,9 @@
   }
 
   .chooseActWrap {
+
+    font-size: 24px;
+
     .chooseActivity,
     select {
       margin-right: 5px;
@@ -119,6 +247,17 @@ section {
 
   &.displayNone {
     display: none;
+  }
+
+  .sectionTitle {
+    font-size: 32px;
+    display: flex;
+    margin: 10px 0;
+  }
+
+  .sectionItem {
+    display: flex;
+    margin: 10px 0;
   }
 }
 

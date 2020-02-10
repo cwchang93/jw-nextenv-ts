@@ -1,100 +1,136 @@
 * {
-    font-family: Microsoft JhengHei;
-    margin: 0;
-    padding: 0;
+  font-family: Microsoft JhengHei;
+  margin: 0;
+  padding: 0;
 }
 
-.index {
-    .header {
-        display: flex;
+.header {
+  display: flex;
 
-        .logoPart {
-            display: flex;
+  .logoPart {
+    display: flex;
 
-            >img {
-                width: 55px;
-            }
-
-            .logoTitle {
-                width: 115px;
-                text-align: center;
-                line-height: 3;
-                background-color: #2B2D2B;
-                font-size: 20px;
-                color: white;
-            }
-        }
-
-        .headerTabWrap {
-            width: 100%;
-            display: flex;
-            background-color: #0B756E;
-            justify-content: space-around;
-            align-items: center;
-            cursor: pointer;
-
-            .headerTab {
-                padding: 10px;
-                font-weight: bold;
-                font-size: 16px;
-                color: white;
-            }
-        }
+    > img {
+      width: 55px;
     }
 
-    .sectionItem {
-        display: flex;
-        margin: 10px 0;
+    .logoTitle {
+      width: 115px;
+      text-align: center;
+      line-height: 3;
+      background-color: #2b2d2b;
+      font-size: 20px;
+      color: white;
+    }
+  }
 
+  .headerTabWrap {
+    width: 100%;
+    display: flex;
+    background-color: #0b756e;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+
+    .headerTab {
+      padding: 10px;
+      font-weight: bold;
+      font-size: 16px;
+      color: white;
+    }
+  }
+}
+
+.sectionItem {
+  display: flex;
+  margin: 10px 0;
+}
+
+.newItemWrap {
+  .formWrap {
+    background-color: aliceblue;
+    z-index: 100;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20%;
+    width: 800px;
+    height: 500px;
+    form {
+      position: relative;
+      padding: 15px 32px;
+      font-size: 32px;
+      .formItem {
+        margin-bottom: 15px;
+      }
+      div {
+        // font-size: 32px;
+      }
+      input {
+        font-size: 32px;
+        width: 500px;
+        height: 40px;
+      }
+    }
+    .close {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+}
+
+.articleSearch {
+  .articleSearchInput {
+    width: 25%;
+  }
+
+  .title {
+    font-weight: bold;
+  }
+
+  .actOutputWrap {
+    &.displayNone {
+      display: none;
     }
 
-    .articleSearch {
-
-        .articleSearchInput {
-            width: 25%;
-        }
-
-        .title {
-            font-weight: bold;
-        }
-
-        .actOutputWrap {
-
-            &.displayNone {
-                display: none;
-            }
-
-            .excelDownload {
-                margin-left: 70px;
-            }
-
-            table,
-            th,
-            td {
-                text-align: center;
-                border: 1px solid black;
-            }
-        }
-
-        .chooseActWrap {
-
-            .chooseActivity,
-            select {
-                margin-right: 5px;
-            }
-        }
-
-
+    .excelDownload {
+      margin-left: 70px;
     }
 
-    section {
-        margin: 20px 55px;
-
-        &.displayNone {
-            display: none;
-        }
-
-
+    table,
+    th,
+    td {
+      text-align: center;
+      border: 1px solid black;
     }
+  }
 
+  .chooseActWrap {
+    .chooseActivity,
+    select {
+      margin-right: 5px;
+    }
+  }
+}
+
+section {
+  margin: 20px 55px;
+
+  &.displayNone {
+    display: none;
+  }
+}
+
+.displayNone {
+  display: none;
+}
+
+.mask {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 1;
 }

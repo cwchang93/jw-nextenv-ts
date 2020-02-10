@@ -8,15 +8,15 @@
     <title>Xinmedia Back</title>
 </head>
 <body>
-    <div class="index">
+    <div class="article">
         <header class="header">
             <div class="logoPart">
                 <img src="./img/logo.png" />
                 <div class="logoTitle">XinMedia</div>
             </div>
             <div class="headerTabWrap">
-                <div class="headerTab" >會員管理</div>
-                <div class="headerTab" onclick="showTravelPoint()">旅遊金管理</div>
+                <div class="headerTab" ><a href="./index.html">會員管理</a></div>
+                <div class="headerTab" ><a href="#">文章管理</a></div>
                 <div class="headerTab" onclick="showAct()">欣生活</div>
                 <div class="headerTab">欣嚴選</div>
                 <div class="headerTab">欣圖庫</div>
@@ -52,98 +52,80 @@
                 </div>
 
                 <table class="tableList" style="width:100%" cellspacing="1" cellpadding="1">
+                    <tr>
+                        <th>序號</th>
+                        <th>文章名稱</th> 
+                        <th>關鍵字</th>
+                        <th>創建日期</th>
+                        <th>編輯</th>
+                        <th>刪除</th>
+                    </tr>
+
+                      <tr>
+                        <td>1</td>
+                        <td><a href="#">冬奧指定場地 龍平滑雪場</a></td>
+                        <td>yongpyong</td>
+                        <td>2020-01-02</td>
+                        <td><button onclick="edit1">編輯</button></td>
+                      <td><button>刪除</button></td>
+                    </tr>
+
                   </table>
 
             </div>
 
-
+            <div class="newItemWrap">
+                <div class="formWrap displayNone">
+                    <form class="form">
+                        
+                        
+                        <div class="formItem">
+                            <div>文章名稱</div>
+                            <input type="text"></input>
+                        </div>
+                        
+                        <div class="formItem">
+                        <div>關鍵字</div>
+                            <input type="text"></input>
+                        </div>
+                        
+                        <div class="formItem">
+                        <div>創建日期</div>
+                            <input type="text"></input>
+                        </div>
+                    </form>
+                    <button class="close" onClick="closeForm()">X</button>
+                </div>
+            </div>
+            
+            
         </section>
+        <div class="mask displayNone"></div>
 
-
-
-    </div>
-</body>
+    </body>
 
     <script>
         document.querySelector('.searchBtn').addEventListener("click", show);
 
-        var data = [{
-            no: 1, 
-            brand: "欣圖庫",
-            memberId: 'Aa12345653',
-            level: '經濟艙',
-            date: '2020/01/02',
-            status:'公開',
-            edit: '修改',
-            del: '刪除'
-        }]
+        function edit1() {
+            document.querySelector('.mask').classList.remove("displayNone")
+        }
 
         function addNewItem() {
-            console.log('dataOld', data)
-            data.push({
-                no: 2, 
-            brand: "欣圖庫",
-            memberId: 'Aa12345653',
-            level: '經濟艙',
-            date: '2020/01/02',
-            status:'公開',
-            edit: '修改',
-            del: '刪除'
-            })
-            console.log('dataNew', data);
-            var element=`<tr>
-                      <th>序號</th>
-                      <th>品牌名稱</th> 
-                      <th>會員編號</th>
-                      <th>艙等</th>
-                      <th>創建日期</th>
-                      <th>狀態</th>
-                      <th>修改</th>
-                      <th>刪除</th>
-                    </tr>`;
-            for (var i=0; i<data.length; i++) {
-                element += `<tr>
-                      <td>${data[i].no}</td>
-                      <td>${data[i].brand}</td>
-                      <td>${data[i].memberId}</td>
-                      <td>${data[i].level}</td>
-                      <td>${data[i].date}</td>
-                      <td>${data[i].status}</td>
-                      <td><button>${data[i].edit}</button></td>
-                      <td><button onclick={del(${i})}>${data[i].del}</button></td>
-                    </tr>`
-            }
+            document.querySelector('.mask').classList.remove('displayNone')
+            document.querySelector('.formWrap').classList.remove('displayNone')
+            
+        }
 
-            document.querySelector('.tableList').innerHTML= element
+        function closeForm() {
+            document.querySelector('.mask').classList.add('displayNone')
+            document.querySelector('.formWrap').classList.add('displayNone')
+
         }
 
         function show() {
             document.querySelector('.actOutputWrap').classList.remove('displayNone')
 
-            var element=`<tr>
-                      <th>序號</th>
-                      <th>品牌名稱</th> 
-                      <th>會員編號</th>
-                      <th>艙等</th>
-                      <th>創建日期</th>
-                      <th>狀態</th>
-                      <th>修改</th>
-                      <th>刪除</th>
-                    </tr>`;
-            for (var i=0; i<data.length; i++) {
-                element += `<tr>
-                      <td>${data[i].no}</td>
-                      <td>${data[i].brand}</td>
-                      <td>${data[i].memberId}</td>
-                      <td>${data[i].level}</td>
-                      <td>${data[i].date}</td>
-                      <td>${data[i].status}</td>
-                      <td><button>${data[i].edit}</button></td>
-                      <td><button onclick={del(${i})}>${data[i].del}</button></td>
-                    </tr>`
-            }
-
-            document.querySelector('.tableList').innerHTML= element
 
         }
 
@@ -157,27 +139,9 @@
             data.splice(idx, 1)
         }
 
-        function closeAll() {
-
-            // console.log(document.querySelectorAll('.sec1').classList)
-            document.querySelector('.sec1').classList.add('displayNone')
-            // document.querySelector('.sec2').classList.add('displayNone')
-            
-            // .add('displayNone')
-            // document.querySelectorAll('section').classList.add('displayNone')
-            // document.getElementsByTagName('SECTION').classList.add('displayNone')
-            
-        }
 
         function showAct() {
             document.querySelector('.sec1').classList.remove('displayNone')
-        }
-
-        function showTravelPoint() {
-            
-            // var element = "<div class='test'>test</div>"
-
-            // document.querySelector('.tableList').innerHTML= element
         }
 
     </script>

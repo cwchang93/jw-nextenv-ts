@@ -11,12 +11,28 @@
     <div class="content">
         <header class="header">
             <div class="logoPart">
-                <img src="./img/logo.png" />
+                <a href="./index.html">
+                    <img src="./img/logo.png" />
+                </a>
                 <div class="logoTitle">XinMedia</div>
             </div>
             <div class="headerTabWrap">
-                <div class="headerTab"><a href="./index.html">會員管理</a></div>
-                <div class="headerTab" ><a href="./article.html">文章管理</a></div>
+                <div class="headerTab showTab" >會員管理
+                    <ul class="memberCategories">
+                        <!-- <li><a href="./index.html">會員資料</a></li> -->
+                        <li><a href="./userList.html">會員查詢</a></li>
+                    </ul>
+                
+                </div>
+                <div class="headerTab showTab" >
+                    文章管理
+                  
+                    <ul>
+                        <li>  <a href="./newArticle.html">新增文章</a></li>
+                        <li><a href="./article.html">文章查詢</a></li>
+                    </ul>
+
+                </div>
                 <div class="headerTab" onclick="showAct()">欣生活</div>
                 <div class="headerTab">欣嚴選</div>
                 <div class="headerTab">欣圖庫</div>
@@ -26,7 +42,6 @@
                 <div class="headerTab" onclick="closeAll()">客服中心</div>
             </div>
         </header>
-
         <!-- <section class="articleSearch sec1 displayNone"> -->
       <section class="editSection">
              <div class="title sectionTitle">修改活動文章</div>

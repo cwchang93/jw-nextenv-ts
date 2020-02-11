@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="index_html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +9,21 @@
 </head>
 <body>
     <div class="index">
-        <header class="header">
+        <!-- <header class="header">
             <div class="logoPart">
-                <img src="./img/logo.png" />
+                <a href="./index.html">
+                    <img src="./img/logo.png" />
+                </a>
                 <div class="logoTitle">XinMedia</div>
             </div>
             <div class="headerTabWrap">
-                <div class="headerTab"><a href="#">會員管理</a></div>
+                <div class="headerTab memberMng" >會員管理
+                    <ul class="memberCategories">
+                        <li><a href="./index.html">會員資料</a></li>
+                        <li><a href="./userList.html">會員查詢</a></li>
+                    </ul>
+                
+                </div>
                 <div class="headerTab" ><a href="./article.html">文章管理</a></div>
                 <div class="headerTab" onclick="showAct()">欣生活</div>
                 <div class="headerTab">欣嚴選</div>
@@ -25,7 +33,7 @@
                 <div class="headerTab">公告系統</div>
                 <div class="headerTab" onclick="closeAll()">客服中心</div>
             </div>
-        </header>
+        </header> -->
 
         <!-- <section class="articleSearch sec1 displayNone"> -->
         <section class="loginSection">
@@ -42,7 +50,7 @@
                         
                         <div class="inputItemWrap">
                               <div class="inputTitle">Password: </div>
-                            <input type="text" class="pswdUser" >
+                            <input type="password" class="pswdUser"  >
                         </div>
                         
                         <div class="loginBtnWrap">

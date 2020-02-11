@@ -42,89 +42,52 @@
                 <div class="headerTab" onclick="closeAll()">客服中心</div>
             </div>
         </header>
+
         <!-- <section class="articleSearch sec1 displayNone"> -->
-        <section class="Search sec1">
-            <div class="title sectionTitle">活動文章查詢</div>
-            <input class="sectionItem SearchInput" placeholder="請輸入會員ID" />
-            <input class="sectionItem SearchInput" placeholder="會員名稱" />
-            <input class="sectionItem SearchInput" placeholder="部落格名稱" />
-            <div class="chooseActWrap sectionItem">
-                <span class="chooseActivity">選擇對應活動</span>
-                <select>
-                    <option value="Jan">一月徵文活動</option>
-                    <option value="Feb">二月徵文活動</option>
-                    <option value="March">三月徵文活動</option>
-                    <option value="April">四月徵文活動</option>
-                  </select>
-                <button type="button" class="searchBtn">搜尋</button>
+        <section class="Search sec1 userList">
+            <div class="title sectionTitle">會員查詢</div>
+
+            <div class="inputWrap">
+                
+                <input class="sectionItem SearchInput" placeholder="請輸入會員ID" />
+                <button type="button" onclick="show()" class="searchBtn">搜尋</button>
                 
             </div>
-
+            
+            <div class="inputWrap">
+                <input class="sectionItem SearchInput" placeholder="請輸入會員名稱" />
+                <button type="button" onclick="show()" class="searchBtn">搜尋</button>
+            </div>
             <div class="actOutputWrap displayNone">
                 
-                <div class="sectionItem">
-                    <div class="actPeriod">活動區間: 1/1~1/31</div>
-                    <button type="button" class="excelDownload">Excel下載</button>
-                    <button type="button" class="addNewItem"><a href="./newArticle.html">新增文章</a></button>
-                    <!-- <button type="button" class="addNewItem" onclick="addNewItem()">新增項目</button> -->
-                </div>
 
                 <table class="tableList" style="width:100%" cellspacing="1" cellpadding="1">
                     <tr>
-                        <th>序號</th>
-                        <th>文章名稱</th> 
-                        <th>關鍵字</th>
-                        <th>創建日期</th>
-                        <th>編輯</th>
+                        <th>會員ID</th>
+                        <th>會員名稱</th> 
+                        <th>文章記錄</th>
+                        <th>旅遊金紀錄</th>
+                        <th>訂單紀錄</th>
                         <th>刪除</th>
                     </tr>
 
                       <tr>
-                        <td>1</td>
-                        <td><a href="#">冬奧指定場地 龍平滑雪場</a></td>
-                        <td>yongpyong</td>
-                        <td>2020-01-02</td>
-                        <td><button onclick="edit1"><a href="./content.html">編輯</button></td>
-                      <td><button>刪除</button></td>
+                        <td>X12343322</td>
+                        <td><a href="#">Xinmedia_JW</a></td>
+                        <td><button onclick="edit1"><a href="./article.html">查詢</button></td>
+                        <td><button>查詢</button></td>
+                        <td><button>查詢</button></td>
+                        <td><button>刪除</button></td>
                     </tr>
 
                   </table>
 
             </div>
 
-            <div class="newItemWrap">
-                <div class="formWrap displayNone">
-                    <form class="form">
-                        
-                        
-                        <div class="formItem">
-                            <div>文章名稱</div>
-                            <input type="text"></input>
-                        </div>
-                        
-                        <div class="formItem">
-                        <div>關鍵字</div>
-                            <input type="text"></input>
-                        </div>
-                        
-                        <div class="formItem">
-                        <div>創建日期</div>
-                            <input type="text"></input>
-                        </div>
-                    </form>
-                    <button class="close" onClick="closeForm()">X</button>
-                </div>
-            </div>
-            
-            
-        </section>
-        <div class="mask displayNone"></div>
 
     </body>
 
     <script>
-        document.querySelector('.searchBtn').addEventListener("click", show);
-
         function edit1() {
             document.querySelector('.mask').classList.remove("displayNone")
         }

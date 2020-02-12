@@ -1,168 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="./css/index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />
     <title>Xinmedia Back</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="article">
-        <header class="header">
-            <div class="logoPart">
-                <a href="./index.html">
-                    <img src="./img/logo.png" />
-                </a>
-                <div class="logoTitle">XinMedia</div>
-            </div>
-            <div class="headerTabWrap">
-                <div class="headerTab showTab" >會員管理
-                    <ul class="memberCategories">
-                        <!-- <li><a href="./index.html">會員資料</a></li> -->
-                        <li><a href="./userList.html">會員查詢</a></li>
-                    </ul>
-                
-                </div>
-                <div class="headerTab showTab" >
-                    文章管理
-                  
-                    <ul>
-                        <li>  <a href="./newArticle.html">新增文章</a></li>
-                        <li><a href="./article.html">文章查詢</a></li>
-                    </ul>
+      <header class="header">
+        <div class="logoPart">
+          <a href="./index.html">
+            <img src="./img/logo.png" />
+          </a>
+          <div class="logoTitle">XinMedia</div>
+        </div>
+        <div class="headerTabWrap">
+          <div class="headerTab showTab">
+            會員管理
+            <ul class="memberCategories">
+              <!-- <li><a href="./index.html">會員資料</a></li> -->
+              <li><a href="./userList.html">會員查詢</a></li>
+            </ul>
+          </div>
+          <div class="headerTab showTab">
+            文章管理
 
-                </div>
-                <div class="headerTab" onclick="showAct()">欣生活</div>
-                <div class="headerTab">欣嚴選</div>
-                <div class="headerTab">欣圖庫</div>
-                <div class="headerTab">欣講堂</div>
-                <div class="headerTab">聯盟合作</div>
-                <div class="headerTab">公告系統</div>
-                <div class="headerTab" onclick="closeAll()">客服中心</div>
-            </div>
-        </header>
-        <!-- <section class="articleSearch sec1 displayNone"> -->
-        <section class="Search sec1">
-            <div class="title sectionTitle">活動文章查詢</div>
-            <input class="sectionItem SearchInput" placeholder="請輸入會員ID" />
-            <input class="sectionItem SearchInput" placeholder="會員名稱" />
-            <input class="sectionItem SearchInput" placeholder="部落格名稱" />
-            <div class="chooseActWrap sectionItem">
-                <span class="chooseActivity">選擇對應活動</span>
-                <select>
-                    <option value="Jan">一月徵文活動</option>
-                    <option value="Feb">二月徵文活動</option>
-                    <option value="March">三月徵文活動</option>
-                    <option value="April">四月徵文活動</option>
-                  </select>
-                <button type="button" class="searchBtn">搜尋</button>
-                
-            </div>
+            <ul>
+              <li><a href="./newArticle.html">新增文章</a></li>
+              <li><a href="./article.html">文章查詢</a></li>
+            </ul>
+          </div>
+          <div class="headerTab" onclick="showAct()">欣生活</div>
+          <div class="headerTab">欣嚴選</div>
+          <div class="headerTab">欣圖庫</div>
+          <div class="headerTab">欣講堂</div>
+          <div class="headerTab">聯盟合作</div>
+          <div class="headerTab">公告系統</div>
+          <div class="headerTab" onclick="closeAll()">客服中心</div>
+        </div>
+      </header>
+      <!-- <section class="articleSearch sec1 displayNone"> -->
+      <section class="Search sec1">
+        <div class="title sectionTitle">活動文章查詢</div>
+        <input class="sectionItem SearchInput" placeholder="請輸入會員ID" />
+        <input class="sectionItem SearchInput" placeholder="會員名稱" />
+        <input class="sectionItem SearchInput" placeholder="部落格名稱" />
+        <div class="chooseActWrap sectionItem">
+          <span class="chooseActivity">選擇對應活動</span>
+          <select>
+            <option value="Jan">一月徵文活動</option>
+            <option value="Feb">二月徵文活動</option>
+            <option value="March">三月徵文活動</option>
+            <option value="April">四月徵文活動</option>
+          </select>
+          <button type="button" class="searchBtn">搜尋</button>
+        </div>
 
-            <div class="actOutputWrap displayNone">
-                
-                <div class="sectionItem">
-                    <div class="actPeriod">活動區間: 1/1~1/31</div>
-                    <button type="button" class="excelDownload">Excel下載</button>
-                    <button type="button" class="addNewItem"><a href="./newArticle.html">新增文章</a></button>
-                    <!-- <button type="button" class="addNewItem" onclick="addNewItem()">新增項目</button> -->
-                </div>
+        <div class="actOutputWrap displayNone">
+          <div class="sectionItem">
+            <div class="actPeriod">活動區間: 1/1~1/31</div>
+            <button type="button" class="excelDownload">Excel下載</button>
+            <button type="button" class="addNewItem">
+              <a href="./newArticle.html">新增文章</a>
+            </button>
+            <!-- <button type="button" class="addNewItem" onclick="addNewItem()">新增項目</button> -->
+          </div>
 
-                <table class="tableList" style="width:100%" cellspacing="1" cellpadding="1">
-                    <tr>
-                        <th>序號</th>
-                        <th>文章名稱</th> 
-                        <th>關鍵字</th>
-                        <th>創建日期</th>
-                        <th>編輯</th>
-                        <th>刪除</th>
-                    </tr>
+          <table
+            class="tableList"
+            style="width:100%"
+            cellspacing="1"
+            cellpadding="1"
+          >
+            <tr>
+              <th>序號</th>
+              <th>文章名稱</th>
+              <th>關鍵字</th>
+              <th>創建日期</th>
+              <th>編輯</th>
+              <th>刪除</th>
+            </tr>
 
-                      <tr>
-                        <td>1</td>
-                        <td><a href="#">冬奧指定場地 龍平滑雪場</a></td>
-                        <td>yongpyong</td>
-                        <td>2020-01-02</td>
-                        <td><button onclick="edit1"><a href="./content.html">編輯</button></td>
-                      <td><button>刪除</button></td>
-                    </tr>
+            <tr>
+              <td>1</td>
+              <td><a href="#">冬奧指定場地 龍平滑雪場</a></td>
+              <td>yongpyong</td>
+              <td>2020-01-02</td>
+              <td><a href="./content.html">編輯</a></td>
+              <td><button>刪除</button></td>
+            </tr>
+          </table>
+        </div>
 
-                  </table>
+        <div class="newItemWrap">
+          <div class="formWrap displayNone">
+            <form class="form">
+              <div class="formItem">
+                <div>文章名稱</div>
+                <input type="text" />
+              </div>
 
-            </div>
+              <div class="formItem">
+                <div>關鍵字</div>
+                <input type="text" />
+              </div>
 
-            <div class="newItemWrap">
-                <div class="formWrap displayNone">
-                    <form class="form">
-                        
-                        
-                        <div class="formItem">
-                            <div>文章名稱</div>
-                            <input type="text"></input>
-                        </div>
-                        
-                        <div class="formItem">
-                        <div>關鍵字</div>
-                            <input type="text"></input>
-                        </div>
-                        
-                        <div class="formItem">
-                        <div>創建日期</div>
-                            <input type="text"></input>
-                        </div>
-                    </form>
-                    <button class="close" onClick="closeForm()">X</button>
-                </div>
-            </div>
-            
-            
-        </section>
-        <div class="mask displayNone"></div>
+              <div class="formItem">
+                <div>創建日期</div>
+                <input type="text" />
+              </div>
+            </form>
+            <button class="close" onClick="closeForm()">X</button>
+          </div>
+        </div>
+      </section>
+      <div class="mask displayNone"></div>
+    </div>
+  </body>
 
-    </body>
+  <script>
+    document.querySelector(".searchBtn").addEventListener("click", show);
 
-    <script>
-        document.querySelector('.searchBtn').addEventListener("click", show);
+    function edit1() {
+      document.querySelector(".mask").classList.remove("displayNone");
+    }
 
-        function edit1() {
-            document.querySelector('.mask').classList.remove("displayNone")
-        }
+    function addNewItem() {
+      document.querySelector(".mask").classList.remove("displayNone");
+      document.querySelector(".formWrap").classList.remove("displayNone");
+    }
 
-        function addNewItem() {
-            document.querySelector('.mask').classList.remove('displayNone')
-            document.querySelector('.formWrap').classList.remove('displayNone')
-            
-        }
+    function closeForm() {
+      document.querySelector(".mask").classList.add("displayNone");
+      document.querySelector(".formWrap").classList.add("displayNone");
+    }
 
-        function closeForm() {
-            document.querySelector('.mask').classList.add('displayNone')
-            document.querySelector('.formWrap').classList.add('displayNone')
+    function show() {
+      document.querySelector(".actOutputWrap").classList.remove("displayNone");
+    }
 
-        }
+    function bump() {
+      alert();
+    }
 
-        function show() {
-            document.querySelector('.actOutputWrap').classList.remove('displayNone')
+    function del(idx) {
+      console.log("hi");
+      console.log(idx);
+      data.splice(idx, 1);
+    }
 
-
-        }
-
-        function bump() {
-            alert();
-        }
-
-        function del(idx) {
-            console.log('hi')
-            console.log(idx)
-            data.splice(idx, 1)
-        }
-
-
-        function showAct() {
-            document.querySelector('.sec1').classList.remove('displayNone')
-        }
-
-    </script>
-
-
+    function showAct() {
+      document.querySelector(".sec1").classList.remove("displayNone");
+    }
+  </script>
 </html>

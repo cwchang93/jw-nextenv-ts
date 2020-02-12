@@ -19,7 +19,7 @@
         <div class="headerTabWrap">
           <div class="headerTab showTab">
             會員管理
-            <ul class="memberCategories">
+            <ul class="headerTab showTab memberCategories">
               <!-- <li><a href="./index.html">會員資料</a></li> -->
               <li><a href="./userList.html">會員查詢</a></li>
             </ul>
@@ -32,7 +32,7 @@
               <li><a href="./article.html">文章查詢</a></li>
             </ul>
           </div>
-          <div class="headerTab" onclick="showAct()">欣生活</div>
+          <div class="headerTab">欣生活</div>
           <div class="headerTab">欣嚴選</div>
           <div class="headerTab">欣圖庫</div>
           <div class="headerTab">欣講堂</div>
@@ -43,7 +43,7 @@
       </header>
 
       <!-- <section class="articleSearch sec1 displayNone"> -->
-      <section class="Search sec1 userList">
+      <section class="Search userList">
         <div class="title sectionTitle">會員查詢</div>
 
         <div class="inputWrap">
@@ -86,10 +86,6 @@
   </body>
 
   <script>
-    function edit1() {
-      document.querySelector(".mask").classList.remove("displayNone");
-    }
-
     function addNewItem() {
       document.querySelector(".mask").classList.remove("displayNone");
       document.querySelector(".formWrap").classList.remove("displayNone");
@@ -102,20 +98,6 @@
 
     function show() {
       document.querySelector(".actOutputWrap").classList.remove("displayNone");
-    }
-
-    function bump() {
-      alert();
-    }
-
-    function del(idx) {
-      console.log("hi");
-      console.log(idx);
-      data.splice(idx, 1);
-    }
-
-    function showAct() {
-      document.querySelector(".sec1").classList.remove("displayNone");
     }
   </script>
 </html>

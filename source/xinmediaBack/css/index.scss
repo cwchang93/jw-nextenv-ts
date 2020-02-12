@@ -9,12 +9,6 @@ html.index_html {
   // margin-top: 64px;
 }
 
-body {
-  .index {
-    padding: 1px;
-  }
-}
-
 .header {
   display: flex;
 
@@ -37,6 +31,7 @@ body {
   }
 
   .headerTabWrap {
+    line-height: 2;
     width: 100%;
     display: flex;
     background-color: #0b756e;
@@ -47,21 +42,22 @@ body {
     .headerTab {
       padding: 10px;
       font-weight: bold;
-      font-size: 16px;
+      font-size: 18px;
       color: white;
       position: relative;
-
+      // height: 100%;
       &.showTab:hover ul {
-        width: 100px;
+        // &.showTab ul {
         max-height: inherit;
         opacity: 1;
       }
 
       ul {
         position: absolute;
-        left: -10px;
+        top: 55px;
+        left: 0;
         width: 100%;
-        background-color: rgba(0, 128, 0, 0.7);
+        background-color: #0b756e;
         color: white;
         width: 90px;
         z-index: 2;
@@ -73,9 +69,14 @@ body {
         overflow: hidden;
         transition: opacity 300ms ease;
         li {
-          padding: 15px;
-          padding-left: 20px;
-          width: 80px;
+          width: 100%;
+          text-align: center;
+          box-sizing: border-box;
+          a {
+            font-weight: normal;
+            color: white;
+            text-decoration: none;
+          }
         }
       }
     }
@@ -133,16 +134,14 @@ body {
 }
 
 .index {
-  height: 100vh;
+  margin-top: 200px;
 
   .loginSection {
-    // text-align: center;
     display: flex;
     align-items: flex-start;
-    // margin-top: 12%;
-
     justify-content: center;
     height: 100%;
+    margin: 0;
 
     .loginBoard {
       width: 390px;

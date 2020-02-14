@@ -12,7 +12,7 @@ const Index = () => {
       <p>Hello Next.js</p>
       <input
         onBlur={e => {
-          checkInputType(e.target.value);
+          checkInputType(e.target.value, true);
         }}
       />
     </div>

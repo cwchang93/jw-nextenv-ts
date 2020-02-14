@@ -13,30 +13,27 @@
 //   const regex = "^[\u4e00-\u9fa5\u0080-\uFFFF_a-zA-Z0-9]+$";
 
 // symbol表示輸入符號的是否可以通過
+//const emojiRegexText = require("emoji-regex/es2015/text.js");
 
-export const checkInputType = (inputText, symbol = false) => {
+export const checkInputType = (inputValue, symbol = false) => {
   const emojiRegexText = require("emoji-regex/es2015/text.js");
-  let flag = true; //
   const emjRT = emojiRegexText(); //emoji 包含不是表情符號的表情符號
-  const jpRegex = /([\u0800-\u4E00])/; //日語的regex
-  const fullWidthDigit = /[\uFE30-\uFFA0]/;
-  // alert(fullWidthDigit.test(inputText));
-  if (emjRT.test(inputText)) {
-    flag = false;
+  const fullWidthDigitandHalfDigit = /[\uFE30-\uFFA0]|[~!@#$%^&*()_+=\-`\[\]{}';:".,<>/?\|]/; // 有包含全形符號(含數字&英文) + 半形符號
+  const fullDigitNoSymbol = /[\uFF10-\uFF19]|[\uFF41-\uFF5A]|[\uFF21-\uFF3A]/; // only全形英文&數字
+
+  let flag = true;
+  // let inputText = inputValue.trim();  覺得傳出來的值，直接去掉頭尾空白
+  // Q: 那solomo 的trim()要怎麼加?
+  console.log("text", inputText);
+  if (emjRT.test(inputText)) flag = false;
+  if (symbol) {
+    // 表示品牌類別
+    if (fullDigitNoSymbol.test(inputText)) flag = false;
+  } else {
+    // 表示basic類別
+    if (fullWidthDigitandHalfDigit.test(inputText)) flag = false;
   }
-  if (fullWidthDigit.test(inputText)) flag = false;
 
-  // if (!symbol) {
-  //   .test()
-  // }
-
-  // if (symbol && )
-
-  // 日語要另外獨立出來
-  // if (jpRegex.test(inputText)) flag = true;
-
-  //   console.log("flag", flag);
-  if (inputText.trim() === "") return;
   console.log(flag);
   return flag;
 };

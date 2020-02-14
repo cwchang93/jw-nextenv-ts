@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/emoji-regex@8.0.0/index.min.js"></script> -->
+    <script src="./emoji.min.js"></script>
+    <script src="./emojitext.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      Hello, Emoji Test!
+    </div>
+    <input type="text" id="emoji" onblur="checkInputType()" />
+  </body>
+
+  <script>
+    const checkInputType = () => {
+      const idDom = document.getElementById("emoji");
+      const inputText = idDom.value;
+      //   alert("idDOM", idDom.value);
+      //   const emojiRegex = require("emoji-regex"); // 表情符號
+      //   console.log("emojiRex", emojiRegex);
+      //   const emojiRegexText = require("emoji-regex/es2015/text.js");
+      let flag = true;
+      console.log("emojiTest", emojiTextRegex().test(inputText));
+      //   const emjR = emojiRegex;
+      // const emjRT = emojiRegexText();
+      //   const regex = "^[\u4e00-\u9fa5\u0080-\uFFFF_a-zA-Z0-9]+$";
+      //   const regex =
+      //     "[\uFE30-\uFFA0]|(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])";
+      //   if (emjR.test(inputText) || emjRT.test(inputText)) {
+      //   if (emJR.test(inputText)) {
+      //     //   const filter = new RegExp(regex);
+      //     //   if (filter.test(inputText)) {
+      //     flag = false;
+      //   }
+
+      //   // 日語要另外獨立出來
+      //   // const jpRegex = /([\u0800-\u4E00])/;
+      //   // if (jpRegex.test(inputText)) flag = true;
+
+      //   //   console.log("flag", flag);
+      //   if (inputText.trim() === "") return;
+      //   alert(flag);
+
+      //   return flag;
+    };
+  </script>
+</html>

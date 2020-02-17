@@ -1,0 +1,48 @@
+// @import '@magaele/core/core/themes/xinmember';
+// @import '../../magaele/core/core/themes/xinmember';
+$classname: "int_xifm";
+
+.#{$classname} {
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: $font-size-smedium;
+    font-family: $font-family-base;
+
+    >.int-label {
+        display: inline-block;
+        padding: 10px 10px;
+        width: 45%;
+        height: 100%;
+        vertical-align: top;
+        text-align: right;
+
+        label {
+            display: block;
+            height: 20px;
+        }
+    }
+
+    >.int_xipt {
+        width: 45%;
+
+        input {
+            letter-spacing: 1px;
+        }
+
+        .msg {
+            padding: 5px 0 0 7px;
+            margin: 0;
+            color: red;
+            line-height: $font-size-smedium;
+        }
+    }
+
+    &.required {
+        label {
+            span {
+                color: red;
+            }
+        }
+    }
+
+}

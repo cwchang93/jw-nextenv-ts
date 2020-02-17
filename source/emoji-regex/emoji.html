@@ -18,40 +18,33 @@
     <div>
       Hello, Emoji Test!
     </div>
-    <input type="text" id="emoji" onblur="checkInputType()" />
+    <!-- <input type="text" id="emoji" onblur="checkInputType()" /> -->
+    <input
+      type="text"
+      id="emoji"
+      onblur="injectValidate(checkInputType(this.value.trim(), false), `.errMsgPart`)"
+    />
+    <span class="errMsgPart"></span>
   </body>
 
   <script>
-    const checkInputType = () => {
-      const idDom = document.getElementById("emoji");
-      const inputText = idDom.value;
-      //   alert("idDOM", idDom.value);
-      //   const emojiRegex = require("emoji-regex"); // 表情符號
-      //   console.log("emojiRex", emojiRegex);
-      //   const emojiRegexText = require("emoji-regex/es2015/text.js");
-      let flag = true;
-      console.log("emojiTest", emojiTextRegex().test(inputText));
-      //   const emjR = emojiRegex;
-      // const emjRT = emojiRegexText();
-      //   const regex = "^[\u4e00-\u9fa5\u0080-\uFFFF_a-zA-Z0-9]+$";
-      //   const regex =
-      //     "[\uFE30-\uFFA0]|(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])";
-      //   if (emjR.test(inputText) || emjRT.test(inputText)) {
-      //   if (emJR.test(inputText)) {
-      //     //   const filter = new RegExp(regex);
-      //     //   if (filter.test(inputText)) {
-      //     flag = false;
-      //   }
+    function injectValidate(noPass, domName) {
+      const checkTypeMsg = `<p style="color:red" id="domErrMsg">
+          偵測到欄位中含有不支援之特殊字型或符號，需請您調整修正文字
+          <a style="font-weight:900 color:#1E8ACC" href="http://www.google.com">
+            (詳細規範)
+          </a>
+        </p>`;
 
-      //   // 日語要另外獨立出來
-      //   // const jpRegex = /([\u0800-\u4E00])/;
-      //   // if (jpRegex.test(inputText)) flag = true;
+      const errElementDom = document.querySelector("#domErrMsg");
 
-      //   //   console.log("flag", flag);
-      //   if (inputText.trim() === "") return;
-      //   alert(flag);
+      // console.log("errElementDom", !!errElementDom);
 
-      //   return flag;
-    };
+      if (!noPass) {
+        document.querySelector(domName).innerHTML = checkTypeMsg;
+      } else if (!!errElementDom && noPass) {
+        errElementDom.parentNode.removeChild(errElementDom);
+      }
+    }
   </script>
 </html>

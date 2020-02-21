@@ -1,50 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/emoji-regex@8.0.0/index.min.js"></script> -->
-    <script src="./emoji.min.js"></script>
-    <script src="./emojitext.min.js"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
-    <title>Document</title>
-  </head>
-  <body>
-    <div>
-      Hello, Emoji Test!
-    </div>
-    <!-- <input type="text" id="emoji" onblur="checkInputType()" /> -->
-    <input
-      type="text"
-      id="emoji"
-      onblur="injectValidate(checkInputType(this.value.trim(), false), `.errMsgPart`)"
-    />
-    <span class="errMsgPart"></span>
-  </body>
 
-  <script>
-    function injectValidate(noPass, domName) {
-      const checkTypeMsg = `<p style="color:red" id="domErrMsg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/emoji-regex@8.0.0/index.min.js"></script> -->
+  <script src="./emoji.min.js"></script>
+  <script src="./emojitextNew.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    Hello, Emoji Test!
+  </div>
+  <!-- <input type="text" id="emoji" onblur="checkInputType()" /> -->
+  <input type="text" id="emoji" onblur="injectValidate(checkInputType(this.value.trim(), false), `.errMsgPart`)" />
+  <span class="errMsgPart"></span>
+</body>
+
+<script>
+  function injectValidate(noPass, domName) {
+    const checkTypeMsg = `<p style="color:red" id="domErrMsg">
           偵測到欄位中含有不支援之特殊字型或符號，需請您調整修正文字
           <a style="font-weight:900 color:#1E8ACC" href="http://www.google.com">
             (詳細規範)
           </a>
         </p>`;
 
-      const errElementDom = document.querySelector("#domErrMsg");
+    const errElementDom = document.querySelector("#domErrMsg");
 
-      // console.log("errElementDom", !!errElementDom);
+    // console.log("errElementDom", !!errElementDom);
 
-      if (!noPass) {
-        document.querySelector(domName).innerHTML = checkTypeMsg;
-      } else if (!!errElementDom && noPass) {
-        errElementDom.parentNode.removeChild(errElementDom);
-      }
+    if (!noPass) {
+      document.querySelector(domName).innerHTML = checkTypeMsg;
+    } else if (!!errElementDom && noPass) {
+      errElementDom.parentNode.removeChild(errElementDom);
     }
-  </script>
+  }
+</script>
+
 </html>
